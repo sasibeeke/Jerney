@@ -156,7 +156,8 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: "jerney-${{ matrix.component }}:scan"
+          #image-ref: "jerney-${{ matrix.component }}:scan"
+          image-ref: sasibk/jerney-${{ matrix.component }}:${{ github.sha }}  
           format: "table"
           exit-code: "1"
           ignore-unfixed: true
